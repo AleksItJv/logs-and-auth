@@ -1,7 +1,7 @@
 package com.app.dao;
 
-import com.app.dao.repositories.UserRepository;
-import com.app.dao.services.UserService;
+import com.app.repositories.UserRepository;
+import com.app.services.UserService;
 import com.app.entities.User;
 import org.junit.Assert;
 import org.junit.Before;

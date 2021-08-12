@@ -1,6 +1,6 @@
 package com.app.controllers;
 
-import com.app.dao.interfaces.UserDAO;
+import com.app.services.interfaces.UserDAO;
 import com.app.entities.Role;
 import com.app.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.net.URL;
 import java.util.ArrayList;
 
 @Controller

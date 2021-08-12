@@ -1,6 +1,6 @@
 package com.app.controllers;
 
-import com.app.dao.interfaces.UserDAO;
+import com.app.services.interfaces.UserDAO;
 import com.app.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

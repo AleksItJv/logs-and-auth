@@ -1,4 +1,4 @@
-package com.app.dao.repositories;
+package com.app.repositories;
 
 import com.app.entities.Book;
 import org.springframework.data.repository.CrudRepository;

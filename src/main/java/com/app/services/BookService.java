@@ -1,7 +1,7 @@
-package com.app.dao.services;
+package com.app.services;
 
-import com.app.dao.interfaces.BookDAO;
-import com.app.dao.repositories.BookRepository;
+import com.app.services.interfaces.BookDAO;
+import com.app.repositories.BookRepository;
 import com.app.entities.Book;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;

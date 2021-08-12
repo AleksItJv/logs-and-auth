@@ -9,13 +9,13 @@
 <html>
 <head>
     <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <%--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
+--%>
 </head>
 <body>
 
-<form action="/registration" method="post" modelAttribute="${user}">
+<%--<form action="/registration" method="post" modelAttribute="${user}">
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Name</span>
         <input name="name" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
@@ -51,10 +51,10 @@
     </select>
     <button type="submit" class="btn btn-primary">Submit</button>
 
-</form>
+</form>--%>
 
 
-<%--<form action="/registration" method="post" modelAttribute="${user}">
+<form action="/registration" method="post" modelAttribute="${user}">
     <p>Name : <input type="text" name="name"></p>
     <p>Login : <input type="text" name="login"></p>
     <p>Email : <input type="text" name="email"></p>
@@ -65,7 +65,7 @@
             <option value="ADMIN">Admin</option>
         </select></p>
     <input type="submit" value="Pass data">
-</form>--%>
+</form>
 
 <p><a href="/index.jsp">Go to main...</a></p>
 </body>

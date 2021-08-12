@@ -6,8 +6,8 @@
     <aop:config>
         <aop:pointcut id="authorizationControllerPointCut" expression="execution(* com.app.controllers.AuthorizationController.*(..))"/>
         <!--<aop:pointcut id="userServletPointCut" expression="execution(* com.app.controllers.*.*(..))"/>-->
-        <aop:pointcut id="userServicePointCut" expression="execution(* com.app.dao.services.UserService.*(..))
-                                     &amp;&amp; !execution(* com.app.dao.services.UserService.getAllUsers(..))"/>
+        <aop:pointcut id="userServicePointCut" expression="execution(* com.app.services.UserService.*(..))
+                                     &amp;&amp; !execution(* com.app.services.UserService.getAllUsers(..))"/>
 
         <aop:aspect ref="securityAspect" id="securityChecker">
             <aop:before method="checkAuthorize"
@@ -18,7 +18,7 @@
 
         <aop:aspect ref="myLogger" id="myAspect">
             <aop:before method="beforeMethodInvocation" pointcut-ref="authorizationControllerPointCut" />
-            <aop:after method="afterMethodInvocation" pointcut="execution(* com.app.dao.repositories.BookRepository.*(..))" />
+            <aop:after method="afterMethodInvocation" pointcut="execution(* com.app.repositories.BookRepository.*(..))" />
             <aop:after-throwing method="afterThrowing" throwing="ex"
                                 pointcut="within(@org.springframework.web.bind.annotation.RequestMapping *)"/>
         </aop:aspect>

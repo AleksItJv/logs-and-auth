@@ -1,7 +1,7 @@
 package com.app.controllers;
 
 import com.app.authorize.Authorization;
-import com.app.dao.interfaces.BookDAO;
+import com.app.services.interfaces.BookDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;

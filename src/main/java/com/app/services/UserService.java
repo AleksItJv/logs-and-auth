@@ -1,11 +1,10 @@
-package com.app.dao.services;
+package com.app.services;
 
-import com.app.dao.interfaces.UserDAO;
-import com.app.dao.repositories.UserRepository;
+import com.app.services.interfaces.UserDAO;
+import com.app.repositories.UserRepository;
 import com.app.entities.User;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

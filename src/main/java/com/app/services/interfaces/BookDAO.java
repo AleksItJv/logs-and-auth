@@ -1,4 +1,4 @@
-package com.app.dao.interfaces;
+package com.app.services.interfaces;
 
 import com.app.entities.Book;
 
