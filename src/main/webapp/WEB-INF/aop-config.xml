@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:config>
+        <aop:pointcut id="authorizationControllerPointCut" expression="execution(* com.app.controllers.AuthorizationController.*(..))"/>
+        <!--<aop:pointcut id="userServletPointCut" expression="execution(* com.app.controllers.*.*(..))"/>-->
+        <aop:pointcut id="userServicePointCut" expression="execution(* com.app.dao.services.UserService.*(..))
+                                     &amp;&amp; !execution(* com.app.dao.services.UserService.getAllUsers(..))"/>
+
+        <aop:aspect ref="securityAspect" id="securityChecker">
+            <aop:before method="checkAuthorize"
+                        pointcut="execution(* com.app.controllers.AuthorizationController.*(..))
+                        &amp;&amp; !execution(* com.app.controllers.AuthorizationController.authorize(..))
+                        &amp;&amp; !execution(* com.app.controllers.AuthorizationController.unAuthorize(..))" />
+        </aop:aspect>
+
+        <aop:aspect ref="myLogger" id="myAspect">
+            <aop:before method="beforeMethodInvocation" pointcut-ref="authorizationControllerPointCut" />
+            <aop:after method="afterMethodInvocation" pointcut="execution(* com.app.dao.repositories.BookRepository.*(..))" />
+            <aop:after-throwing method="afterThrowing" throwing="ex"
+                                pointcut="within(@org.springframework.web.bind.annotation.RequestMapping *)"/>
+        </aop:aspect>
+
+        <aop:aspect ref="userLogAspect" id="userLogAspects">
+            <aop:before method="beforeUserServiceMethodInvocation" pointcut-ref="userServicePointCut"/>
+            <aop:after method="afterUserServiceMethodInvocation" pointcut-ref="userServicePointCut"/>
+            <aop:around method="aroundUserServiceMethodInvocation" pointcut-ref="userServicePointCut"/>
+        </aop:aspect>
+
+    </aop:config>
+
+</beans>
